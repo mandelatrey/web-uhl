@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { dmSans } from "@/lib/fonts";
 import "./globals.css";
-
-const DMSans = DM_Sans({
-  subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-dm-sans',
-  adjustFontFallback: false,
-});
+import ReduxProvider from "@/providers/ReduxProvider";
 
 export const metadata: Metadata = {
   title: "Uhlendorf Innovations",
@@ -22,9 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${DMSans.className} ${DMSans.variable} font-sans antialiased`}
+        className={`${dmSans.className} ${dmSans.variable} font-sans antialiased`}
       >
-        {children}
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

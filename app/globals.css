@@ -17,6 +17,8 @@
   --font-sans: var(--font-DMSans);
 }
 
+
+
 body {
   background: var(--color-highlight-green);
 }
@@ -39,7 +41,6 @@ body {
     @apply bg-highlight-green text-gray-800
   }
 }
-
 
 /* Header */
 .navbar {
@@ -66,7 +67,7 @@ body {
 }
 
 .header-title {
-  @apply text-center md:text-left text-4xl md:text-4xl lg:text-5xl font-semibold text-white mb-5 tracking-tighter
+  @apply text-left md:text-left text-4xl md:text-4xl lg:text-5xl font-semibold text-white mb-5 tracking-tighter
 }
 
 .section-title {
@@ -95,5 +96,9 @@ body {
 
 .section-mini-title {
   @apply text-lg uppercase tracking-widest text-center
+}
+
+.glass {
+  @apply bg-white/50 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl;
 }
 
