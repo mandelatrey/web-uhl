@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-highlight-green: #CAE2BC;
+  --color-fruit-green: #157F1F;
+  --color-dark-green: #157F1F;
+  --color-bright-green: #DBF9B8;
+  --color-dark-brown: #565F54;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-highlight-green: var(--color-highlight-green);
+  --color-fruit-green: var(--color-fruit-green);
+  --color-dark-green: var(--color-dark-green);
+  --color-bright-green: var(--color-bright-green);
+  --color-dark-brown: var(--color-dark-brown);
+  --font-sans: var(--font-DMSans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-highlight-green);
 }
+
+/* Hide scrollbars */
+* {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* WebKit */
+}
+
+@layer base {
+  body {
+    @apply bg-highlight-green text-gray-800
+  }
+}
+
+
+/* Header */
+.navbar {
+  @apply fixed top-0 left-0 max-w-[350px] w-full h-screen p-8 pt-16 -translate-x-[500px] z-100 transition-transform duration-300 lg:hidden bg-fruit-green
+}
+
+.navbar.active {
+  @apply translate-x-0
+}
+
+.overlay {
+  @apply fixed top-0 left-0 w-full h-screen bg-black/50 z-40 opacity-0 transition-opacity duration-300;
+  clip-path: polygon(320px 0%, 100% 0%, 100% 100%, 320px 100%);
+  pointer-events: none;
+}
+
+.overlay-hero {
+  @apply absolute inset-0 z-10 w-full pointer-events-none;
+}
+
+.overlay.active {
+  @apply opacity-100;
+  pointer-events: auto;
+}
+
+.header-title {
+  @apply text-center md:text-left text-4xl md:text-4xl lg:text-5xl font-semibold text-white mb-5 tracking-tighter
+}
+
+.section-title {
+  @apply text-center md:text-left text-4xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-3 tracking-tighter
+}
+
+.section-scroll-title {
+  @apply text-center md:text-center text-3xl/9 md:text-4xl/14 lg:text-5xl/14 font-semibold mb-2 tracking-tighter
+}
+
+.header-title-mini {
+  @apply text-center md:text-left text-3xl md:text-4xl lg:text-4xl font-semibold text-white mb-4 tracking-tighter
+}
+
+.subtitle {
+  @apply font-medium text-base text-center md:text-left text-white md:text-xl mx-auto items-start max-w-[70%] md:max-w-[100%] lg:max-w-[100%]
+}
+
+.section-subtitle {
+  @apply font-medium text-base text-center text-gray-700 md:text-lg mx-auto items-center max-w-[70%] md:max-w-[40%] lg:max-w-[60%]
+}
+
+.subtitle-numeral {
+  @apply font-medium text-sm text-center md:text-left text-white md:text-base mx-auto items-start max-w-[70%] lg:max-w-[100%]
+}
+
+.section-mini-title {
+  @apply text-lg uppercase tracking-widest text-center
+}
+
