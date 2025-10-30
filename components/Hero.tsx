@@ -6,7 +6,7 @@ import RotatingText from './RotatingText'
 import FadeContent from "./FadeContent";
 import SplitText from "./SplitText";
 import Navbar from "./Navbar";
-import CardNav from "./CardNav";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 const uhlLogo = '/icons/uhlendorf logo.svg';
 
@@ -44,14 +44,16 @@ const handleAnimationComplete = () => {
 };
 
 const Hero = () => {
+    
     const images: string[] = backgroundImages.map(img => img.link);
 
     return (
         <section className="relative w-full min-h-screen overflow-hidden">
+            
 
             <HeroImage images={images} interval={10000} />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent" />
-            <Navbar />
+            
             {/* <CardNav
                 logo={uhlLogo}
                 logoAlt="Company Logo"
@@ -63,10 +65,11 @@ const Hero = () => {
                 ease="power3.out" 
                 className="w-full bg-highlight-green"/> */}
 
-            <div className="absolute inset-0 z-20 flex items-center">
-                <div className="container mx-auto px-6">
-                    <FadeContent blur={true} duration={1500} easing="ease-in" initialOpacity={0}>
-                        <div className="max-w-xl">
+            <div className="absolute inset-0 z-20 flex items-center px-6 justify-left mx-4">
+                <Navbar />
+                <div className="mx-auto w-full h-full flex items-center justify-center">
+                    <FadeContent blur={false} duration={1500} easing="ease-in" initialOpacity={0}>
+                        <div className="max-w-4xl justify-self-center flex flex-col items-center">
                             <h1 className="header-title">
                                 Fueling Africa&apos;s growth with{' '}
                                 <span className="inline-block">
@@ -87,28 +90,23 @@ const Hero = () => {
                                         rotationInterval={3000}
                                     />
                                 </span>{' '}
-                                human centered agri-solutions
+                                <br /> human centered agri-solutions
                             </h1>
 
                             <SplitText
                                 text="We uplift communities through innovative solutions that address   critical needs in water, income security, and health."
-                                className="font-medium text-xl text-white/70 max-w-[80%] tracking-normal"
-                                delay={1000}
-                                duration={0.8}
-                                ease="power3.out"
-                                splitType="lines"
+                                className="font-base text-xl text-white/70 tracking-normal pt-5 max-w-[80%]"
+                                delay={200}
+                                duration={0.9}
+                                ease="power2.out"
+                                splitType="words"
                                 from={{ opacity: 0, y: 40 }}
                                 to={{ opacity: 1, y: 0 }}
                                 threshold={0.1}
                                 rootMargin="-100px"
-                                textAlign="left"
+                                textAlign="center"
                                 onLetterAnimationComplete={handleAnimationComplete}
                             />
-
-                            {/* 
-                            <p className="font-dm-sans font-medium text-xl text-white/90 max-w-[80%] tracking-normal">
-                                We uplift communities through innovative solutions that address critical needs in water, income security, and health.
-                            </p> */}
                         </div>
                     </FadeContent>
                 </div>

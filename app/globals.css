@@ -6,6 +6,7 @@
   --color-dark-green: #157F1F;
   --color-bright-green: #DBF9B8;
   --color-dark-brown: #565F54;
+  --color-black: #000000;
 }
 
 @theme inline {
@@ -20,7 +21,7 @@
 
 
 body {
-  background: var(--color-highlight-green);
+  background: var(--color-black);
 }
 
 /* Hide scrollbars */
@@ -34,6 +35,10 @@ body {
 *::-webkit-scrollbar {
   display: none;
   /* WebKit */
+}
+
+section {
+  @apply w-full h-screen
 }
 
 @layer base {
@@ -67,11 +72,11 @@ body {
 }
 
 .header-title {
-  @apply text-left md:text-left text-4xl md:text-4xl lg:text-5xl font-semibold text-white mb-5 tracking-tighter
+  @apply text-center text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-5 tracking-tighter
 }
 
 .section-title {
-  @apply text-center md:text-left text-4xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-3 tracking-tighter
+  @apply text-center text-4xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-3 tracking-tighter
 }
 
 .section-scroll-title {
@@ -101,4 +106,10 @@ body {
 .glass {
   @apply bg-white/50 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl;
 }
+
+.secondary-btn {
+  @apply bg-fruit-green w-[100px] h-[40px] rounded-lg text-center items-center justify-center text-white hidden md:flex;
+}
+
+
 

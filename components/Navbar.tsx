@@ -94,7 +94,7 @@ const Navbar = () => {
       
         <header className="fixed top-0 left-0 right-0 z-30 w-full mx-auto">
             
-                {/* <div className={`overlay ${isOpen ? "active" : ""}`} onClick={handleClick}></div> */}
+                <div className={`overlay ${isOpen ? "active" : ""}`} onClick={handleClick}></div>
                 <nav className={`navbar ${isOpen ? "active" : ""}`}>
                         {/*wrapper*/}
                         <div className="flex justify-between items-center mb-8">
@@ -166,26 +166,26 @@ const Navbar = () => {
             
             
             {/* Main header content */}
-            <div className={`relative flex justify-between transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : isScrolling ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
-                <div className="container lg:pb-0 mx-auto h-[70px] fixed top-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-7xl">
-                    <div className="flex items-center justify-between bg-white/80 backdrop-blur-md w-full h-full rounded-xl px-3">
+            <div className={`relative flex justify-between transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : isScrolling ? 'opacity-70 pointer-events-none' : 'opacity-100'}`}>
+                <div className="lg:pb-0 mx-auto h-[65px] fixed top-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-screen px-8">
+                    <div className="flex items-center justify-between w-full h-full rounded-xl px-6">
                         <a href="./" className="flex flex-row items-center">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
-                                width={100}
+                                width={130}
                                 height={50}
                                 alt="company logo" 
-                                className=""/>
+                                className="invert"/>
                         </a>
 
                         <button onClick={handleClick} className="lg:hidden ml-auto">
-                                <Menu size={20} />
+                                <Menu size={26} className="text-white" />
                         </button>
 
                         {/* Desktop */}
                     <ul className="max-lg:hidden flex flex-row  items-center gap-10">
                         {navItems.map((item) => (
-                            <li key={item.name} className="text-xs tracking-wide hover:text-green-700 cursor-pointer transition-colors duration-300 flex items-center gap-1 relative">
+                            <li key={item.name} className="text-sm text-white tracking-wide hover:text-white/70 hover:border-b hover:border-white/50 cursor-pointer transition-all duration-300 flex items-center gap-1 relative py-2 ease-in">
                                 {item.name.toLowerCase() === "projects" ? (
                                     <div 
                                         className="flex items-center gap-1 group"
@@ -200,7 +200,7 @@ const Navbar = () => {
                                         {/* Dropdown Menu */}
                                         {isProjectsDropdownOpen && (
                                             <div 
-                                                className="absolute top-full left-0 mt-7 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50"
+                                                className="absolute top-full left-0 mt-3 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50"
                                                 onMouseEnter={openProjectsDropdown}
                                                 onMouseLeave={scheduleCloseProjectsDropdown}
                                             >
