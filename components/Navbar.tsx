@@ -98,7 +98,7 @@ const Navbar = () => {
                 <nav className={`navbar ${isOpen ? "active" : ""}`}>
                         {/*wrapper*/}
                         <div className="flex justify-between items-center mb-8">
-                            <h3 className="text-highlight-green font-medium tracking-tight uppercase text-xl/5">Uhlendorf Innovations</h3>
+                            <h3 className="text-highlight-green font-medium uppercase text-sm/5">Uhlendorf Innovations</h3>
                             <button className="border size-[35px] rounded-full flex items-center justify-center border-highlight-green/25 hover:bg-highlight-green/50 transition-colors duration-300 group">
                                 <X
                                     onClick={handleClick}

@@ -14,8 +14,8 @@ const approachItems = [
 
 const Approach = () => {
   return (
-    <section className="w-full min-h-screen overflow-hidden bg-highlight-green pt-15">
-        <div className="container mx-15 w-full h-full flex flex-col  items-center">
+    <section className="w-full h-full items-start">
+        <div className="container mx-15 flex flex-col  items-center">
             <div className="flex flex-col gap-y-5">
                 <h1 className="section-title">
                     Our Approach
@@ -24,10 +24,7 @@ const Approach = () => {
                 We envision a world where every community thrives through solutions that foster self-reliance
                 </p>
             </div>
-
-            <div className="w-full h-dvh">
-                <Bento />
-            </div>
+            <Bento />
         </div>
     </section>
   )

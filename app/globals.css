@@ -21,7 +21,7 @@
 
 
 body {
-  background: var(--color-black);
+  background: var(--color-highlight-green);
 }
 
 /* Hide scrollbars */
@@ -44,6 +44,16 @@ section {
 @layer base {
   body {
     @apply bg-highlight-green text-gray-800
+  }
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-highlight-green h-[40px] w-full text-fruit-green rounded-lg uppercase flex items-center justify-center mt-15 font-medium transition-all duration-400
+  }
+
+  .secondary-btn {
+    @apply bg-white h-[40px] w-[120px] text-fruit-green rounded-lg uppercase flex items-center justify-center max-lg:hidden font-medium
   }
 }
 
@@ -107,9 +117,6 @@ section {
   @apply bg-white/50 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl;
 }
 
-.secondary-btn {
-  @apply bg-fruit-green w-[100px] h-[40px] rounded-lg text-center items-center justify-center text-white hidden md:flex;
-}
 
 
 

@@ -48,7 +48,7 @@ const Hero = () => {
     const images: string[] = backgroundImages.map(img => img.link);
 
     return (
-        <section className="relative w-full min-h-screen overflow-hidden">
+        <section className="relative w-full min-h-screen overflow-hidden bg-black">
             
 
             <HeroImage images={images} interval={10000} />

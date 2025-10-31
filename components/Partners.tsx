@@ -40,9 +40,9 @@ const companies = [
 const Partners = () => {
     return (
         <div className="flex flex-col bg-highlight-green h-[300px] md:h-[300px] w-full px-12  items-center p-6 pt-15 gap-y-10">
-            <p className="uppercase  text-base md:text-lg font-medium text-center md:text-left">We have partnered with more than
+            <p className="uppercase  text-base md:text-sm font-medium text-center md:text-left">We have partnered with more than
                 <span className="text-fruit-green max-w-[60%]"> 
-                 {' '}10+ organizations</span> around the East African region
+                 {' '}10+ organizations</span> 
             </p>
 
             <div className="flex items-center overflow-hidden gap-8">
