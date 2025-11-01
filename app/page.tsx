@@ -10,7 +10,7 @@ export default function Home() {
       <body>
         <Hero />
         <Partners />
-        <Approach />
+        <Approach/>
         <History />
         <Pillars />
       </body>

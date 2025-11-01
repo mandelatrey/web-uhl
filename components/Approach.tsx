@@ -1,4 +1,5 @@
 import Bento from "./Bento"
+import NewApproach from "./NewApproach"
 
 const approachItems = [
     {
@@ -13,18 +14,19 @@ const approachItems = [
 ]
 
 const Approach = () => {
-  return (
-    <section className="w-full h-full items-start">
-        <div className="container mx-15 flex flex-col  items-center">
-            <div className="flex flex-col gap-y-5">
-                <h1 className="section-title">
-                    Our Approach
-                </h1>
-                <p className="text-center text-lg font-medium max-w-lg">
-                We envision a world where every community thrives through solutions that foster self-reliance
-                </p>
+    return (
+        <section data-navbar-invert="true" className="w-full h-full flex flex-col items-center gap-y-7">
+            <div className="container mx-auto flex flex-col items-center">
+                <div className="flex flex-col gap-y-3">
+                    <h1 className="section-title">
+                        Our Approach
+                    </h1>
+                    <p className="text-center text-md/tight lg:text-lg font-light max-w-sm lg:max-w-lg">
+                    We envision a world where every community thrives through solutions that foster self-reliance
+                    </p>
             </div>
-            <Bento />
+            
+            <NewApproach />
         </div>
     </section>
   )

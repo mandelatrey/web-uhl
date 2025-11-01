@@ -7,6 +7,7 @@
   --color-bright-green: #DBF9B8;
   --color-dark-brown: #565F54;
   --color-black: #000000;
+  --color-cream: #E6F0E1;
 }
 
 @theme inline {
@@ -21,7 +22,8 @@
 
 
 body {
-  background: var(--color-highlight-green);
+  background: var(--color-cream);
+  overflow-x: hidden
 }
 
 /* Hide scrollbars */
@@ -37,8 +39,12 @@ body {
   /* WebKit */
 }
 
+/* .font-light {
+  white-space: pre-line;
+} */
+
 section {
-  @apply w-full h-screen
+  @apply w-full
 }
 
 @layer base {
