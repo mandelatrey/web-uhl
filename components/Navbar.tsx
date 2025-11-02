@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useSelector, useDispatch } from 'react-redux'
@@ -13,15 +14,27 @@ import { toggleOpen, setProjectsOpen, setIsScrolling } from '@/store/headerSlice
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
+    const pathname = usePathname();
     const dispatch = useDispatch<AppDispatch>()
     const isOpen = useSelector((s: RootState) => s.header.isOpen)
     const isProjectsDropdownOpen = useSelector((s: RootState) => s.header.isProjectsDropdownOpen)
     const isScrolling = useSelector((s: RootState) => s.header.isScrolling)
     const [isInverted, setIsInverted] = useState(false);
+    const navbarTriggersRef = useRef<ScrollTrigger[]>([]);
 
     const handleClick = () => {
         dispatch(toggleOpen())
     };
+
+    // Close mobile menu and dropdown on route change
+    useEffect(() => {
+        if (isOpen) {
+            dispatch(toggleOpen());
+        }
+        if (isProjectsDropdownOpen) {
+            dispatch(setProjectsOpen(false));
+        }
+    }, [pathname]);
 
     // keep dropdown open state in redux; reuse selector above
     const closeProjectsDropdownTimeoutRef = useRef<number | null>(null);
@@ -96,30 +109,47 @@ const Navbar = () => {
 
     // Detect light backgrounds and invert navbar colors
     useEffect(() => {
-        const lightSections = gsap.utils.toArray<HTMLElement>('section[data-navbar-invert="true"]');
+        // Reset inverted state on route change
+        setIsInverted(false);
+        
+        // Kill only navbar-specific ScrollTriggers
+        navbarTriggersRef.current.forEach(trigger => trigger.kill());
+        navbarTriggersRef.current = [];
+        
+        // Small delay to ensure DOM is ready after route change
+        const timer = setTimeout(() => {
+            const lightSections = gsap.utils.toArray<HTMLElement>('section[data-navbar-invert="true"]');
 
-        if (lightSections.length === 0) return;
+            if (lightSections.length === 0) {
+                return;
+            }
 
-        const triggers = lightSections.map((section) => {
-            return ScrollTrigger.create({
-                trigger: section,
-                start: 'top 65px',
-                end: 'bottom 65px',
-                onEnter: () => setIsInverted(true),
-                onLeave: () => setIsInverted(false),
-                onEnterBack: () => setIsInverted(true),
-                onLeaveBack: () => setIsInverted(false),
+            const triggers = lightSections.map((section) => {
+                return ScrollTrigger.create({
+                    trigger: section,
+                    start: 'top 65px',
+                    end: 'bottom 65px',
+                    onEnter: () => setIsInverted(true),
+                    onLeave: () => setIsInverted(false),
+                    onEnterBack: () => setIsInverted(true),
+                    onLeaveBack: () => setIsInverted(false),
+                });
             });
-        });
+
+            // Store triggers for cleanup
+            navbarTriggersRef.current = triggers;
+        }, 100);
 
         return () => {
-            triggers.forEach(trigger => trigger.kill());
+            clearTimeout(timer);
+            // Clean up on unmount or route change
+            navbarTriggersRef.current.forEach(trigger => trigger.kill());
         };
-    }, []);
+    }, [pathname]);
 
     return (
 
-        <header className="fixed top-0 left-0 right-0 z-30 w-full mx-auto">
+        <header className="fixed top-0 left-0 right-0 z-30 w-full">
 
             <div className={`overlay ${isOpen ? "active" : ""}`} onClick={handleClick}></div>
             <nav className={`navbar ${isOpen ? "active" : ""}`}>
@@ -155,14 +185,16 @@ const Navbar = () => {
                                     {isProjectsDropdownOpen && (
                                         <div className="ml-4 mb-4 bg-highlight-green/5 rounded-lg">
                                             <Link
-                                                href="#agribridge"
+                                                href="/projects/agribridge"
                                                 className="block px-4 py-3 text-sm text-highlight-green hover:bg-highlight-green/10 transition-colors duration-200 border-b border-highlight-green/10"
+                                                onClick={() => dispatch(toggleOpen())}
                                             >
                                                 Agribridge
                                             </Link>
                                             <Link
-                                                href="#community-engagement"
+                                                href="/projects/community-engagement"
                                                 className="block px-4 py-3 text-sm text-highlight-green hover:bg-highlight-green/10 transition-colors duration-200"
+                                                onClick={() => dispatch(toggleOpen())}
                                             >
                                                 Community Engagement Projects
                                             </Link>
@@ -173,7 +205,8 @@ const Navbar = () => {
                                 <>
                                     <Link
                                         href={item.href}
-                                        className="text-sm py-7 text-highlight-green ml-4">
+                                        className="text-sm py-7 text-highlight-green ml-4"
+                                        onClick={() => dispatch(toggleOpen())}>
                                         {item.name}
                                     </Link>
                                     <ArrowRight
@@ -193,26 +226,26 @@ const Navbar = () => {
 
 
             {/* Main header content */}
-            <div className={`relative flex justify-between transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                <div className="lg:pb-0 mx-auto h-[65px] fixed top-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-screen px-8">
-                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-6 backdrop-blur-md transition-all duration-300 ${isInverted ? 'bg-white/30 border border-gray-200/20' : 'bg-black/20 border border-white/10'}`}>
+            <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                <div className="mx-auto h-[65px] w-full max-w-screen px-8 pt-4">
+                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-6 transition-all duration-300 ${isInverted ? 'bg-dark-green/50 border border-dark-green/20' : 'bg-white/50 border border-white/20'}`}>
                         <a href="./" className="flex flex-row items-center">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
                                 width={130}
                                 height={50}
                                 alt="company logo"
-                                className={`transition-all duration-300 ${isInverted ? '' : 'invert'}`} />
+                                className={`transition-all duration-300 ${isInverted ? 'invert' : ''}`} />
                         </a>
 
                         <button onClick={handleClick} className="lg:hidden ml-auto">
-                            <Menu size={26} className={`transition-colors duration-300 ${isInverted ? 'text-gray-900' : 'text-white'}`} />
+                            <Menu size={26} className={`transition-colors duration-300 ${isInverted ? 'text-white' : 'text-gray-900'}`} />
                         </button>
 
                         {/* Desktop */}
                         <ul className="max-lg:hidden flex flex-row  items-center gap-10">
                             {navItems.map((item) => (
-                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center gap-1 relative py-2 ease-in ${isInverted ? 'text-gray-900 hover:text-gray-600 hover:border-b hover:border-gray-600' : 'text-white hover:text-white/70 hover:border-b hover:border-white/50'}`}>
+                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center gap-1 relative py-2 ease-in ${isInverted ? 'text-white hover:text-white/70 hover:border-b hover:border-white/50' : 'text-gray-900 hover:text-gray-600 hover:border-b hover:border-gray-600'}`}>
                                     {item.name.toLowerCase() === "projects" ? (
                                         <div
                                             className="flex items-center gap-1 group"
@@ -232,13 +265,13 @@ const Navbar = () => {
                                                     onMouseLeave={scheduleCloseProjectsDropdown}
                                                 >
                                                     <Link
-                                                        href="#agribridge"
+                                                        href="/projects/agribridge"
                                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
                                                     >
                                                         Agribridge
                                                     </Link>
                                                     <Link
-                                                        href="#community-engagement"
+                                                        href="/projects/community-engagement"
                                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
                                                     >
                                                         Community Engagement Projects
@@ -256,7 +289,7 @@ const Navbar = () => {
                         </ul>
 
 
-                        <button className={`h-[40px] w-[120px] rounded-lg uppercase flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 ${isInverted ? 'bg-fruit-green text-white' : 'bg-white text-fruit-green'}`}>
+                        <button className={`h-[40px] w-[120px] rounded-lg uppercase flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 ${isInverted ? 'bg-white text-fruit-green' : 'bg-fruit-green text-white'}`}>
                             <p className="mx-14 font-semibold text-sm">
                                 Login
                             </p>

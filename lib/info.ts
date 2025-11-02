@@ -1,8 +1,8 @@
 const navItems = [
-    { name: "About Us", href: "#about-us" },
-    { name: "Projects", href: "#projects" },
-    { name: "Donors", href: "#donors" },
-    { name: "Contact Us", href: "#contact-us" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Projects", href: "/projects" },
+    { name: "Donors", href: "/donors" },
+    { name: "Contact Us", href: "/contact-us" },
 ]
 
 export const backgroundImages = [
