@@ -24,7 +24,7 @@ const Approach = () => {
                     <p className="text-center text-md/tight lg:text-lg font-light max-w-sm lg:max-w-lg">
                     We envision a world where every community thrives through solutions that foster self-reliance
                     </p>
-            </div>
+                </div>
             
             <NewApproach />
         </div>
