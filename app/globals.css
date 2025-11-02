@@ -34,6 +34,10 @@ body {
   /* Internet Explorer 10+ */
 }
 
+*:focus {
+  outline: none !important;
+}
+
 *::-webkit-scrollbar {
   display: none;
   /* WebKit */

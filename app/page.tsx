@@ -1,4 +1,7 @@
 import Approach from "@/components/Approach";
+import Blog from "@/components/Blog";
+import CallToAction from "@/components/CallToAction";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import History from "@/components/History";
 import LivesTransformed from "@/components/LivesTransformed";
@@ -15,6 +18,9 @@ export default function Home() {
         <History />
         <Pillars />
         <LivesTransformed />
+        <Blog />
+        <CallToAction />
+        <Footer />
       </body>
     </main>
   );
