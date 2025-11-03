@@ -77,8 +77,7 @@ section {
 }
 
 .overlay {
-  @apply fixed top-0 left-0 w-full h-screen bg-black/50 z-40 opacity-0 transition-opacity duration-300;
-  clip-path: polygon(320px 0%, 100% 0%, 100% 100%, 320px 100%);
+  @apply fixed top-0 left-[250px] w-[calc(100%-250px)] h-screen bg-black/50 z-40 opacity-0 transition-opacity duration-300;
   pointer-events: none;
 }
 

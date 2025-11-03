@@ -68,7 +68,7 @@ const NewApproach = () => {
         <div className='w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] h-full pt-7 p-4 overflow-hidden' id='sticky-cards' ref={container}>
             {approachItems.map((item, index) => (
                 <div className='sticky-card flex items-start pt-5' key={item.title} >
-                    <div className='ring-white p-2 bg-highlight-green w-full rounded-xl h-[220px] md:h-[250px] lg:h-[300px] flex items-end shadow-lg justify-between' >
+                    <div className='ring-white p-2 bg-highlight-green w-full rounded-xl h-[230px] md:h-[250px] lg:h-[300px] flex items-end shadow-lg justify-between' >
                         <div className='flex flex-col max-w-[50%] rounded-full pl-3 pb-3 lg:pl-6 lg:pb-6'>
                             <p className='text-xs font-medium text-fruit-green pt-3'>Step {index + 1}</p>
                             <h2 className='font-semibold text-md/tighter lg:text-xl/tight lg:max-w-[60%] tracking-tight pb-2 pt-1 lg:pb-4 lg:pt-3'>{item.title}</h2>
