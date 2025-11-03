@@ -95,7 +95,7 @@ const Hero = () => {
 
                             <SplitText
                                 text="We uplift communities through innovative solutions that address   critical needs in water, income security, and health."
-                                className="font-base text-xl text-white/70 tracking-normal pt-5 max-w-[80%] mb-6"
+                                className="font-base text-base md:text-xl text-white/90 tracking-normal pt-2 max-w-[80%] mb-6"
                                 delay={200}
                                 duration={0.9}
                                 ease="power2.out"
