@@ -27,8 +27,8 @@ const LivesTransformed = () => {
     return (
         <section className="w-full h-full flex flex-col items-center gap-y-7">
             <div className="container mx-auto flex flex-col items-center">
-                <div className="flex flex-col gap-y-3">
-                        <h1 className='section-title'>How Lives Are Transformed</h1>
+                <div className="flex flex-col gap-y-3 items-center justify--center">
+                        <h1 className='section-title max-w-[70%] text-center'>How Lives Are Transformed</h1>
                         <p className="text-center text-md/tight lg:text-lg font-light max-w-sm lg:max-w-lg">
                         We envision  solutions that foster self-reliance especially in rural areas.
                         </p>

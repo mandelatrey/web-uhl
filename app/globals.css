@@ -126,6 +126,23 @@ section {
   @apply bg-white/50 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 5s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
 
 
 

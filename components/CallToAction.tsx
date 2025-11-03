@@ -20,7 +20,7 @@ const CallToAction = () => {
                 <p className="text-white">Sign Up</p>
               </a>
             </div>
-            <p className="text-xs tracking-wide pt-5">
+            <p className="text-xs tracking-tight pt-5">
               By subscribing you agree to <span className="font-semibold cursor-pointer"><a>our Privacy Policy</a></span>
             </p>
           </div>

@@ -57,7 +57,7 @@ const Pillars = () => {
   }, { scope: container })
 
   return (
-    <section data-navbar-invert="true" className='w-full min-h-dvh overflow-hidden flex items-center justify-center py-6 md:py-16 lg:py-20 -pt-15' ref={container}>
+    <section data-navbar-invert="true" className='w-full min-h-dvh overflow-hidden flex items-center justify-center py-6 md:py-16 lg:py-20 -pt-15 mb-3' ref={container}>
       <div className='container h-full w-full px-4 sm:px-6 md:px-8 max-w-[95%] sm:max-w-[85%] md:max-w-[80%] lg:max-w-[70%] flex flex-col justify-center gap-y-6'>
         <h1 className='section-title mb-6 md:mb-8 lg:mb-15'>Our Pillars</h1>
         <div className='flex flex-col gap-y-6 md:gap-y-8 lg:gap-y-10'>
