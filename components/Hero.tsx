@@ -6,7 +6,7 @@ import RotatingText from './RotatingText'
 import FadeContent from "./FadeContent";
 import SplitText from "./SplitText";
 import Navbar from "./Navbar";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import Link from "next/link";
 
 const uhlLogo = '/icons/uhlendorf logo.svg';
 
@@ -74,7 +74,7 @@ const Hero = () => {
                                 Fueling Africa&apos;s growth with{' '}
                                 <span className="inline-block">
                                     <RotatingText
-                                        texts={['sustainable', 'empowering', 'life-changing', 'innovative']}
+                                        texts={['sustainable', 'self-sufficient', 'eco-friendly', 'innovative']}
                                         mainClassName="px-4 pl-2 text-highlight-green font-light overflow-hidden py-1 inline-flex items-center rounded-xl font-bold transition-all duration-100"
                                         staggerFrom={"last"}
                                         initial={{ y: "100%" }}
@@ -95,7 +95,7 @@ const Hero = () => {
 
                             <SplitText
                                 text="We uplift communities through innovative solutions that address   critical needs in water, income security, and health."
-                                className="font-base text-xl text-white/70 tracking-normal pt-5 max-w-[80%]"
+                                className="font-base text-xl text-white/70 tracking-normal pt-5 max-w-[80%] mb-6"
                                 delay={200}
                                 duration={0.9}
                                 ease="power2.out"
@@ -107,6 +107,17 @@ const Hero = () => {
                                 textAlign="center"
                                 onLetterAnimationComplete={handleAnimationComplete}
                             />
+
+                            <FadeContent blur={false} duration={1500} easing="ease-in" initialOpacity={0} delay={400}>
+                                <Link 
+                                    href="/about-us" 
+                                    className="bg-fruit-green hover:bg-fruit-green/90 text-white px-8 py-3 rounded-lg font-semibold text-sm tracking-tight transition-all duration-300 hover:scale-105 inline-block"
+                                >
+                                    About Us
+                                </Link>
+                            </FadeContent>
+
+                            
                         </div>
                     </FadeContent>
                 </div>
