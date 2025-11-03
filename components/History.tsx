@@ -8,7 +8,7 @@ const handleAnimationComplete = () => {
 
 const History = () => {
     return (
-        <section data-navbar-invert="true" className='w-full pt-2 mt-25 pb-5'>
+        <section data-navbar-invert="true" className='w-full pt-2 mt-12 md:mt-25 pb-0 md:pb-5'>
             <div className=" p-3 px-4 flex flex-col items-center justify-center gap-5">
                 <h1 className='section-title mb-8'>Our History</h1>
 

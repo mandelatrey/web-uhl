@@ -90,7 +90,7 @@ const Hero = () => {
                                         rotationInterval={3000}
                                     />
                                 </span>{' '}
-                                <br /> human centered agri-solutions
+                                <br /> human centered solutions
                             </h1>
 
                             <SplitText

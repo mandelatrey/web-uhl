@@ -9,7 +9,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState, AppDispatch } from '@/store/store'
-import { toggleOpen, setProjectsOpen, setIsScrolling } from '@/store/headerSlice'
+import { toggleOpen, setProjectsOpen } from '@/store/headerSlice'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +18,6 @@ const Navbar = () => {
     const dispatch = useDispatch<AppDispatch>()
     const isOpen = useSelector((s: RootState) => s.header.isOpen)
     const isProjectsDropdownOpen = useSelector((s: RootState) => s.header.isProjectsDropdownOpen)
-    const isScrolling = useSelector((s: RootState) => s.header.isScrolling)
     const [isInverted, setIsInverted] = useState(false);
     const navbarTriggersRef = useRef<ScrollTrigger[]>([]);
 
@@ -57,55 +56,7 @@ const Navbar = () => {
         }, 220);
     };
 
-    // Hide header while the page is actively scrolling; show when scroll stops.
 
-    useEffect(() => {
-        const onStart = () => { dispatch(setIsScrolling(true)); };
-        const onEnd = () => { dispatch(setIsScrolling(false)); };
-
-        // Try to use the globally-registered ScrollTrigger (registered in page.tsx)
-        const gsapRaw = gsap as unknown as Record<string, unknown>
-        type ScrollTriggerLike = {
-            addEventListener?: (name: string, cb: () => void) => void
-            removeEventListener?: (name: string, cb: () => void) => void
-        }
-
-        const ST = gsapRaw.ScrollTrigger as unknown as ScrollTriggerLike | undefined
-
-        let dynamicST: ScrollTriggerLike | null = null
-
-        if (ST && typeof ST.addEventListener === 'function') {
-            ST.addEventListener('scrollStart', onStart)
-            ST.addEventListener('scrollEnd', onEnd)
-        } else {
-            // Fallback: dynamically import ScrollTrigger and register
-            import('gsap/ScrollTrigger')
-                .then(({ ScrollTrigger }) => {
-                    try {
-                        gsap.registerPlugin(ScrollTrigger)
-                        if (typeof ScrollTrigger.addEventListener === 'function') {
-                            ScrollTrigger.addEventListener('scrollStart', onStart)
-                            ScrollTrigger.addEventListener('scrollEnd', onEnd)
-                        }
-                        dynamicST = ScrollTrigger as ScrollTriggerLike
-                    } catch { }
-                })
-                .catch(() => { });
-        }
-
-        return () => {
-            try {
-                if (ST && typeof ST.removeEventListener === 'function') {
-                    ST.removeEventListener('scrollStart', onStart)
-                    ST.removeEventListener('scrollEnd', onEnd)
-                }
-                if (dynamicST && typeof dynamicST.removeEventListener === 'function') {
-                    dynamicST.removeEventListener('scrollStart', onStart)
-                    dynamicST.removeEventListener('scrollEnd', onEnd)
-                }
-            } catch { }
-        };
-    }, [dispatch]);
 
     // Detect light backgrounds and invert navbar colors
     useEffect(() => {
@@ -156,7 +107,7 @@ const Navbar = () => {
                 {/*wrapper*/}
                 <div className="flex justify-between items-center mb-8">
                     <h3 className="text-highlight-green font-medium uppercase text-sm/5">Uhlendorf Innovations</h3>
-                    <button className="border size-[35px] rounded-full flex items-center justify-center border-highlight-green/25 hover:bg-highlight-green/50 transition-colors duration-300 group">
+                    <button className="border size-[35px] rounded-full flex items-center justify-center border-highlight-green/25 hover:bg-highlight-green/70 transition-colors duration-300 group">
                         <X
                             onClick={handleClick}
                             size={25}
@@ -227,8 +178,8 @@ const Navbar = () => {
 
             {/* Main header content */}
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                <div className="mx-auto h-[65px] w-full max-w-screen px-8 pt-4">
-                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-6 transition-all duration-300 ${isInverted ? 'bg-dark-green/50 border border-dark-green/20' : 'bg-white/50 border border-white/20'}`}>
+                <div className="mx-auto h-[75px] w-full max-w-screen px-8 pt-4">
+                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-6 transition-all duration-300 ${isInverted ? 'bg-dark-green border border-dark-green/20' : 'bg-white border border-white/20'}`}>
                         <a href="./" className="flex flex-row items-center">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
@@ -260,7 +211,7 @@ const Navbar = () => {
                                             {/* Dropdown Menu */}
                                             {isProjectsDropdownOpen && (
                                                 <div
-                                                    className="absolute top-full left-0 mt-3 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50"
+                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50"
                                                     onMouseEnter={openProjectsDropdown}
                                                     onMouseLeave={scheduleCloseProjectsDropdown}
                                                 >
