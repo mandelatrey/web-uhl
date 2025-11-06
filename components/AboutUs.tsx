@@ -51,7 +51,7 @@ const AboutUs = () => {
                         Mission
                     </motion.h1>
                     <motion.p 
-                        className="text-center text-md/tight lg:text-lg font-light max-w-lg lg:max-w-xl"
+                        className="text-center text-md/tight lg:text-lg font-light max-w-lg lg:max-w-xl mx-5"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -78,7 +78,7 @@ const AboutUs = () => {
                         Vision
                     </motion.h1>
                     <motion.p 
-                        className="text-center text-md/tight lg:text-lg font-light max-w-lg lg:max-w-xl"
+                        className="text-center text-md/tight lg:text-lg font-light max-w-lg lg:max-w-xl mx-5"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
