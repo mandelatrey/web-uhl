@@ -94,11 +94,13 @@ const AboutUs = () => {
                 <div className="w-full max-w-4xl px-4 mx-auto relative z-10 mb-20">
                     <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                         <iframe
-                            className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg"
-                            src="https://www.youtube.com/embed/Tb-hNcOFJ1s"
+                            className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg border-0"
+                            src="https://www.youtube.com/embed/Tb-hNcOFJ1s?rel=0&modestbranding=1&playsinline=1"
                             title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="strict-origin-when-cross-origin"
                         />
                     </div>
                 </div>
@@ -125,7 +127,7 @@ const AboutUs = () => {
                             Our Team
                         </motion.h1>
                         <motion.p 
-                            className="text-center text-md/tight lg:text-lg font-light max-w-lg lg:max-w-xl"
+                            className="text-center text-md/tight lg:text-lg font-light max-w-lg lg:max-w-xl mx-5"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
