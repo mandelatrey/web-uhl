@@ -178,12 +178,12 @@ const Navbar = () => {
 
             {/* Main header content */}
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                <div className="mx-auto h-[75px] w-full max-w-screen px-8 pt-4">
-                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-6 transition-all duration-300 ${isInverted ? 'bg-dark-green border border-dark-green/20' : 'bg-white border border-white/20'}`}>
+                <div className="mx-auto h-[70px] w-[78%] max-w-screen px-4 pt-4">
+                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-2 transition-all duration-300 ${isInverted ? 'bg-dark-green border border-dark-green/20' : 'bg-white border border-white/20'}`}>
                         <a href="./" className="flex flex-row items-center">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
-                                width={130}
+                                width={120}
                                 height={50}
                                 alt="company logo"
                                 className={`transition-all duration-300 ${isInverted ? 'invert' : ''}`} />
