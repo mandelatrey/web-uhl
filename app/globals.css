@@ -5,9 +5,11 @@
   --color-fruit-green: #157F1F;
   --color-dark-green: #157F1F;
   --color-bright-green: #DBF9B8;
+  --color-light-green: #F0FFDF;
   --color-dark-brown: #565F54;
   --color-black: #000000;
   --color-cream: #E6F0E1;
+
 }
 
 @theme inline {

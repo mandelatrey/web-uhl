@@ -1,6 +1,7 @@
 'use client'
-import React from 'react'
+
 import { motion } from 'motion/react'
+import VideoPlayer from './VideoPlayer'
 
 const AboutUs = () => {
     const teamMembers = [
@@ -92,21 +93,13 @@ const AboutUs = () => {
             <div className="relative w-full">
                 {/* Video Component */}
                 <div className="w-full max-w-4xl px-4 mx-auto relative z-10 mb-20">
-                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                        <iframe
-                            className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg border-0"
-                            src="https://www.youtube.com/embed/Tb-hNcOFJ1s?rel=0&modestbranding=1&playsinline=1"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                        />
+                    <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
+                        <VideoPlayer src="https://youtu.be/Tb-hNcOFJ1s" />
                     </div>
                 </div>
 
                 {/* Background Element - starts from middle of video, fixed position */}
-                <div className='absolute top-1/8 md:top-1/6 left-0 w-full bg-highlight-green -z-10 h-[250vh] sm:h-[200vh] md:h-[150vh]' />
+                <div className='absolute top-1/8 md:top-1/6 left-0 w-full bg-gradient-to-tr from-highlight-green via-white to-light-green -z-10 h-[250vh] sm:h-[200vh] md:h-[150vh]' />
 
                 {/* Content */}
                 <div className='container mx-auto flex flex-col items-center relative z-10 pb-20'>
