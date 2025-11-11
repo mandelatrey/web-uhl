@@ -1,59 +1,82 @@
-import Link from "next/link";
+'use client'
+
+import { motion } from 'motion/react'
 
 export default function ProjectsPage() {
+  const projects = [
+    {
+      index: 1,
+      name: "The Listening Campaigns"
+    },
+    {
+      index: 2,
+      name: "Economic Empowerment Programs"
+    },
+    {
+      index: 3,
+      name: "Enterprise Financing & Investment Linkages"
+    },
+
+  ]
   return (
-    <main className="min-h-screen">
-      <div className="container mx-auto px-8 pt-32 pb-16">
-        <h1 className="section-title">Projects</h1>
-        <div className="max-w-4xl mx-auto">
-          <p className="section-subtitle mb-8">
-            Explore our innovative projects that are making a real difference in communities around the world.
-          </p>
-          
-          <div className="space-y-8 text-gray-700">
-            <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">Our Impact</h2>
-              <p className="text-base md:text-lg text-center max-w-3xl mx-auto">
-                Through strategic partnerships and cutting-edge technology, we develop solutions that 
-                address critical challenges in agriculture, community development, and sustainable growth. 
-                Each project is designed with local communities to ensure lasting positive impact.
-              </p>
-            </section>
+    <section data-navbar-invert="true" className="w-full h-full flex flex-col items-center gap-y-7 mt-25">
+      <div className="container mx-auto flex flex-col items-center">
+        <motion.div
+          className="flex flex-col gap-y-3 items-center justify-center pb-12 p-5"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.h1
+            className='section-title max-w-[70%] md:max-w-full text-center'
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Our Projects
+          </motion.h1>
 
-            <section className="grid md:grid-cols-2 gap-8 mt-12">
-              <Link 
-                href="/projects/agribridge"
-                className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200"
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Agribridge</h3>
-                <p className="text-base text-gray-700">
-                  Connecting farmers with markets and resources through innovative technology solutions. 
-                  Agribridge empowers agricultural communities with tools for sustainable farming and 
-                  improved market access.
-                </p>
-                <span className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium">
-                  Learn more →
-                </span>
-              </Link>
+          <motion.p
+            className="text-center text-md/tight lg:text-lg font-light max-w-lg lg:max-w-xl mx-5"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            "To empower and uplift East African communities through innovative and sustainable solutions that address critical needs in water, income security and health."
+          </motion.p>
+        </motion.div>
 
-              <Link 
-                href="/projects/community-engagement"
-                className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200"
+        <div className='flex flex-col lg:flex-row items-stretch justify-center gap-6 w-full px-5 pb-12'>
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.index}
+              className='group relative bg-highlight-green rounded-2xl p-8 flex-1 min-h-[300px] flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-xl'
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+            >
+              <div className='flex flex-col gap-4'>
+                <h3 className='text-2xl font-regular tracking-tight titlecase text-left text-black'>
+                  {project.name}
+                </h3>
+              </div>
+
+              <motion.button
+                className='mt-6 px-6 py-3 bg-black text-white rounded-lg font-medium text-left w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+                initial={{ opacity: 0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Community Engagement Projects</h3>
-                <p className="text-base text-gray-700">
-                  Building stronger communities through collaborative initiatives that promote education, 
-                  health, and sustainable development. Our engagement programs create lasting partnerships 
-                  and empower local leaders.
-                </p>
-                <span className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium">
-                  Learn more →
-                </span>
-              </Link>
-            </section>
-          </div>
+                Read More
+              </motion.button>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </main>
+    </section>
   );
 }

@@ -136,18 +136,25 @@ const Navbar = () => {
                                     {isProjectsDropdownOpen && (
                                         <div className="ml-4 mb-4 bg-highlight-green/5 rounded-lg">
                                             <Link
-                                                href="/projects/agribridge"
+                                                href="/projects/listening-campaigns"
                                                 className="block px-4 py-3 text-sm text-highlight-green hover:bg-highlight-green/10 transition-colors duration-200 border-b border-highlight-green/10"
                                                 onClick={() => dispatch(toggleOpen())}
                                             >
-                                                Agribridge
+                                                The Listening Campaigns
                                             </Link>
                                             <Link
-                                                href="/projects/community-engagement"
+                                                href="/projects/economic-empowerment"
+                                                className="block px-4 py-3 text-sm text-highlight-green hover:bg-highlight-green/10 transition-colors duration-200 border-b border-highlight-green/10"
+                                                onClick={() => dispatch(toggleOpen())}
+                                            >
+                                                Economic Empowerment Programs
+                                            </Link>
+                                            <Link
+                                                href="/projects/enterprise-financing"
                                                 className="block px-4 py-3 text-sm text-highlight-green hover:bg-highlight-green/10 transition-colors duration-200"
                                                 onClick={() => dispatch(toggleOpen())}
                                             >
-                                                Community Engagement Projects
+                                                Enterprise Financing & Investment Linkages
                                             </Link>
                                         </div>
                                     )}
@@ -180,7 +187,7 @@ const Navbar = () => {
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                 <div className="mx-auto h-[70px] w-[78%] max-w-screen px-4 pt-4">
                     <div className={`flex items-center justify-between w-full h-full rounded-xl px-2 transition-all duration-300 ${isInverted ? 'bg-dark-green border border-dark-green/20' : 'bg-white border border-white/20'}`}>
-                        <a href="./" className="flex flex-row items-center">
+                        <a href="./" className="flex flex-row items-center pl-2">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
                                 width={120}
@@ -211,21 +218,27 @@ const Navbar = () => {
                                             {/* Dropdown Menu */}
                                             {isProjectsDropdownOpen && (
                                                 <div
-                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50"
+                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[280px] z-50"
                                                     onMouseEnter={openProjectsDropdown}
                                                     onMouseLeave={scheduleCloseProjectsDropdown}
                                                 >
                                                     <Link
-                                                        href="/projects/agribridge"
+                                                        href="/projects/listening-campaigns"
                                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
                                                     >
-                                                        Agribridge
+                                                        The Listening Campaigns
                                                     </Link>
                                                     <Link
-                                                        href="/projects/community-engagement"
+                                                        href="/projects/economic-empowerment"
                                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
                                                     >
-                                                        Community Engagement Projects
+                                                        Economic Empowerment Programs
+                                                    </Link>
+                                                    <Link
+                                                        href="/projects/enterprise-financing"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
+                                                    >
+                                                        Enterprise Financing & Investment Linkages
                                                     </Link>
                                                 </div>
                                             )}

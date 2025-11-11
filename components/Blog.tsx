@@ -81,7 +81,7 @@ const Blog = () => {
                 <p className="text-sm md:text-base/tight text-gray-200 mb-4 md:mb-6 lg:max-w-[80%]">
                   {featuredPost.description}
                 </p>
-                <button className="bg-green-800 hover:bg-fruit-green text-gray-100 px-4 md:px-6 py-2 rounded text-xs md:text-sm font-semibold transition-all duration-300 ease-in cursor-pointer">
+                <button className="bg-fruit-green hover:bg-fruit-green/80 text-gray-100 px-4 md:px-6 py-2 rounded text-xs md:text-sm font-semibold transition-all duration-300 ease-in cursor-pointer">
                   READ MORE
                 </button>
               </div>

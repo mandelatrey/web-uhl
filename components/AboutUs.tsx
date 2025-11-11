@@ -135,22 +135,22 @@ const AboutUs = () => {
                         {teamMembers.map((member, index) => (
                             <motion.div 
                                 key={member.name} 
-                                className="flex flex-col items-center"
+                                className="flex flex-col items-center group"
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.2 }}
-                                transition={{ duration: 0.2, delay: index * 0.1 }}
-                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.2, delay: index * 0.05 }}
+                                whileHover={{ scale: 1.05}}
                             >
-                                <div className="w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 bg-gray-300 rounded-3xl overflow-hidden mb-3 md:mb-4">
+                                <div className="w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 bg-gray-300 rounded-3xl overflow-hidden mb-3 md:mb-4 ring ring-white/50 hover:ring-green-300/30 hover:shadow-md transition-all duration-300 ease-in-out">
                                     <img 
                                         src={member.image} 
                                         alt={member.name}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <h3 className="font-semibold text-center text-base md:text-md lg:text-lg">{member.name}</h3>
-                                <p className="text-sm md:text-sm lg:text-md text-gray-600 text-center font-light">{member.role}</p>
+                                <h3 className="font-semibold text-center text-base text-gray-700 group-hover:text-gray-800 md:text-md lg:text-lg">{member.name}</h3>
+                                <p className="text-sm md:text-sm lg:text-md text-gray-600 text-center font-light text-gray-400 group-hover:text-gray-700">{member.role}</p>
                             </motion.div>
                         ))}
                     </div>
