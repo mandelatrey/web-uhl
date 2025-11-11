@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.className} ${dmSans.variable} font-sans antialiased`}
+        className={`${dmSans.className} ${dmSans.variable} font-sans antialiased bg-gradient-to-tr from-orange-100 to-white min-h-screen`}
       >
         <ReduxProvider>
           <Navbar />

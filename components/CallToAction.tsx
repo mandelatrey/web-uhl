@@ -14,7 +14,7 @@ const CallToAction = () => {
               <input
                 type="text"
                 placeholder="Enter your email..."
-                className="w-full h-12 md:h-auto py-2 bg-white ring ring-fruit-green/50 rounded-md p-4 text-sm text-gray-700/70"
+                className="w-full h-12 md:h-auto py-2 bg-white rounded-md p-4 text-sm text-gray-700/70"
               />
               <a href="" className="flex items-center justify-center bg-fruit-green md:mx-3 w-full md:w-[10rem] h-12 md:h-[2.5rem] rounded-lg">
                 <p className="text-white">Sign Up</p>

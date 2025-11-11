@@ -5,6 +5,39 @@ const navItems = [
     { name: "Contact Us", href: "/contact-us" },
 ]
 
+const footerItems = [
+    {
+        title: "Company",
+        links: [
+            { name: "About Us", href: "/about-us" },
+            { name: "Projects", href: "/projects" },
+            { name: "Address", href: "#address" },
+        ]
+    },
+    {
+        title: "Support",
+        links: [
+            { name: "Contact Us", href: "/contact-us" },
+            { name: "Feedback", href: "/feedback" },
+            { name: "Social Media", href: "#social" },
+        ]
+    },
+    {
+        title: "Links",
+        links: [
+            { name: "Blogs", href: "/blogs" },
+            { name: "Donor Center", href: "/donors" },
+        ]
+    },
+    {
+        title: "Contact Us",
+        links: [
+            { name: "+1 (555) 123-4567", href: "tel:+15551234567", icon: "phone" },
+            { name: "info@uhlendorf.org", href: "mailto:info@uhlendorf.org", icon: "email" },
+        ]
+    },
+]
+
 export const backgroundImages = [
     {
       name: "Women farming cassava in Sierra Leone",
@@ -46,4 +79,5 @@ export const partnersInfo = [
 
 export {
     navItems,
+    footerItems,
 }

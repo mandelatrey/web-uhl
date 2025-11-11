@@ -19,7 +19,7 @@ export default function ProjectsPage() {
 
   ]
   return (
-    <section data-navbar-invert="true" className="w-full h-full flex flex-col items-center gap-y-7 mt-25">
+    <section data-navbar-invert="true" className="w-full h-full flex flex-col items-center gap-y-7 pt-25">
       <div className="container mx-auto flex flex-col items-center">
         <motion.div
           className="flex flex-col gap-y-3 items-center justify-center pb-12 p-5"

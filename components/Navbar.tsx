@@ -186,24 +186,24 @@ const Navbar = () => {
             {/* Main header content */}
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                 <div className="mx-auto h-[70px] w-[78%] max-w-screen px-4 pt-4">
-                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-2 transition-all duration-300 ${isInverted ? 'bg-dark-green border border-dark-green/20' : 'bg-white border border-white/20'}`}>
+                    <div className={`relative flex items-center justify-between w-[100%] h-full rounded-xl px-2 transition-all duration-300`}>
                         <a href="./" className="flex flex-row items-center pl-2">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
                                 width={120}
                                 height={50}
                                 alt="company logo"
-                                className={`transition-all duration-300 ${isInverted ? 'invert' : ''}`} />
+                                className={`transition-all duration-300`} />
                         </a>
 
                         <button onClick={handleClick} className="lg:hidden ml-auto">
-                            <Menu size={26} className={`transition-colors duration-300 ${isInverted ? 'text-white' : 'text-gray-900'}`} />
+                            <Menu size={26} className={`transition-colors duration-300`} />
                         </button>
 
                         {/* Desktop */}
                         <ul className="max-lg:hidden flex flex-row  items-center gap-10">
                             {navItems.map((item) => (
-                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center gap-1 relative py-2 ease-in ${isInverted ? 'text-white hover:text-white/70 hover:border-b hover:border-white/50' : 'text-gray-900 hover:text-gray-600 hover:border-b hover:border-gray-600'}`}>
+                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center gap-1 relative py-2 ease-in}`}>
                                     {item.name.toLowerCase() === "projects" ? (
                                         <div
                                             className="flex items-center gap-1 group"
@@ -224,19 +224,19 @@ const Navbar = () => {
                                                 >
                                                     <Link
                                                         href="/projects/listening-campaigns"
-                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-gray-800 transition-colors duration-200"
                                                     >
                                                         The Listening Campaigns
                                                     </Link>
                                                     <Link
                                                         href="/projects/economic-empowerment"
-                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-gray-800 transition-colors duration-200"
                                                     >
                                                         Economic Empowerment Programs
                                                     </Link>
                                                     <Link
                                                         href="/projects/enterprise-financing"
-                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-gray-800 transition-colors duration-200"
                                                     >
                                                         Enterprise Financing & Investment Linkages
                                                     </Link>
@@ -253,11 +253,13 @@ const Navbar = () => {
                         </ul>
 
 
-                        <button className={`h-[40px] w-[120px] rounded-lg uppercase flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 ${isInverted ? 'bg-white text-fruit-green' : 'bg-fruit-green text-white'}`}>
-                            <p className="mx-14 font-semibold text-sm">
+                        <button className={`h-[40px] w-[120px] rounded-lg uppercase flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 bg-fruit-green text-white`}>
+                            <p className="mx-14 font-semibold text-sm text-white">
                                 Login
                             </p>
                         </button>
+
+                        <div className="absolute top-0 left-0 w-full h-full backdrop-blur-md z-[-1] bg-white rounded-xl"/>
 
 
                     </div>

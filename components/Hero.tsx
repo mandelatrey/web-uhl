@@ -53,18 +53,6 @@ const Hero = () => {
 
             <HeroImage images={images} interval={10000} />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent" />
-            
-            {/* <CardNav
-                logo={uhlLogo}
-                logoAlt="Company Logo"
-                items={items}
-                baseColor="#fff"
-                menuColor="#000"
-                buttonBgColor="#111"
-                buttonTextColor="#fff"
-                ease="power3.out" 
-                className="w-full bg-highlight-green"/> */}
-
             <div className="absolute inset-0 z-20 flex items-center px-6 justify-left mx-4">
                 <Navbar />
                 <div className="mx-auto w-full h-full flex items-center justify-center">
@@ -111,9 +99,11 @@ const Hero = () => {
                             <FadeContent blur={false} duration={1500} easing="ease-in" initialOpacity={0} delay={400}>
                                 <Link 
                                     href="/about-us" 
-                                    className="bg-fruit-green hover:bg-fruit-green/90 text-white px-8 py-3 rounded-lg font-semibold text-sm tracking-tight transition-all duration-300 hover:scale-105 inline-block"
+                                    className="flex items-center justify-center bg-fruit-green hover:bg-fruit-green/90 rounded-lg transition-all duration-300 hover:scale-105 w-[150px] md:w-[200px] h-[40px] md:h-[50px] "
                                 >
-                                    About Us
+                                    <p className="text-lg tracking-tight font-regular text-white">
+                                        About Us
+                                    </p>
                                 </Link>
                             </FadeContent>
 

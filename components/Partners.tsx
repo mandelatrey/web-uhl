@@ -40,7 +40,7 @@ const Partners = () => {
     ];
     return (
         <section data-navbar-invert="true" className="flex flex-col h-[300px] md:h-[300px] w-full px-12 items-center p-6 pt-15 gap-y-10">
-            <p className="uppercase text-base md:text-sm font-medium text-center md:text-left">We have partnered with more than
+            <p className="lettercase text-2xl md:text-lg text-center md:text-left">We have partnered with more than
                 <span className="text-fruit-green max-w-[60%]">
                     {' '}10+ organizations</span>
             </p>

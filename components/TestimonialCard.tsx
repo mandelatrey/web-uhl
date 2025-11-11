@@ -13,11 +13,11 @@ const TestimonialCard = memo(({ user, message, photo, index }: TestimonialCardPr
     <div 
       role="article" 
       aria-label={`Testimonial from ${user}`}
-      className="bg-highlight-green rounded-2xl shadow-md p-4 px-8 py-8 flex flex-col gap-4 w-full h-[50%] min-h-[400px]"
+      className="bg-highlight-green/40 rounded-2xl shadow-md p-4 px-8 py-8 flex flex-col gap-4 w-full h-[50%] min-h-[400px]"
     >
       {/* User Photo - Circular, 60px diameter */}
       <div className="flex justify-start">
-        <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden border-1 border-fruit-green/60">
+        <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden border-[0.5] border-dark-brown/30">
           <Image
             src={photo}
             alt={user}
