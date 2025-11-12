@@ -98,7 +98,7 @@ section {
 }
 
 .section-title {
-  @apply text-center text-4xl md:text-4xl lg:text-5xl font-semibold text-dark-brown mb-3 tracking-tighter
+  @apply text-center text-4xl md:text-5xl lg:text-5xl font-semibold text-dark-brown mb-3 tracking-tighter
 }
 
 .section-scroll-title {

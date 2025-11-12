@@ -185,15 +185,15 @@ const Navbar = () => {
 
             {/* Main header content */}
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                <div className="mx-auto h-[70px] w-[78%] max-w-screen px-4 pt-4">
-                    <div className={`relative flex items-center justify-between w-[100%] h-full rounded-xl px-2 transition-all duration-300`}>
+                <div className="mx-auto h-[70px] w-[78%] max-w-screen px-4 pt-4 mt-5">
+                    <div className={`relative flex items-center justify-between w-[100%] h-full rounded-full px-2 transition-all duration-300`}>
                         <a href="./" className="flex flex-row items-center pl-2">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
                                 width={120}
                                 height={50}
                                 alt="company logo"
-                                className={`transition-all duration-300`} />
+                                className={`transition-all duration-300 invert`} />
                         </a>
 
                         <button onClick={handleClick} className="lg:hidden ml-auto">
@@ -259,7 +259,7 @@ const Navbar = () => {
                             </p>
                         </button>
 
-                        <div className="absolute top-0 left-0 w-full h-full backdrop-blur-md z-[-1] bg-white rounded-xl"/>
+                        <div className="absolute top-0 left-0 w-full h-full backdrop-blur-md z-[-1] bg-white/30 rounded-xl"/>
 
 
                     </div>

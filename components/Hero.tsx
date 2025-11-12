@@ -52,9 +52,8 @@ const Hero = () => {
             
 
             <HeroImage images={images} interval={10000} />
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent" />
-            <div className="absolute inset-0 z-20 flex items-center px-6 justify-left mx-4">
-                <Navbar />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/50 to-transparent" />
+            <div className="absolute inset-0 z-20 flex items-center px-6 justify-left mx-4 pt-15">
                 <div className="mx-auto w-full h-full flex items-center justify-center">
                     <FadeContent blur={false} duration={1500} easing="ease-in" initialOpacity={0}>
                         <div className="max-w-4xl justify-self-center flex flex-col items-center">
