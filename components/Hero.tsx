@@ -49,24 +49,11 @@ const Hero = () => {
 
     return (
         <section className="relative w-full min-h-screen overflow-hidden bg-black">
-            
-
             <HeroImage images={images} interval={10000} />
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent" />
-            
-            {/* <CardNav
-                logo={uhlLogo}
-                logoAlt="Company Logo"
-                items={items}
-                baseColor="#fff"
-                menuColor="#000"
-                buttonBgColor="#111"
-                buttonTextColor="#fff"
-                ease="power3.out" 
-                className="w-full bg-highlight-green"/> */}
-
-            <div className="absolute inset-0 z-20 flex items-center px-6 justify-left mx-4">
-                <Navbar />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 from-10 via-black/40 to-transparent" />
+    
+            <div className="absolute inset-0 z-20 flex items-center px-6 justify-left mx-4 pt-15">
+                
                 <div className="mx-auto w-full h-full flex items-center justify-center">
                     <FadeContent blur={false} duration={1500} easing="ease-in" initialOpacity={0}>
                         <div className="max-w-4xl justify-self-center flex flex-col items-center">

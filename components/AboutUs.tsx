@@ -33,7 +33,7 @@ const AboutUs = () => {
     ];
 
     return (
-        <section className='w-full h-full flex flex-col items-center gap-y-7 pt-35 '>
+        <section data-navbar-invert="true" className='w-full h-full flex flex-col items-center gap-y-7 pt-35 '>
             <div className='container mx-auto flex flex-col items-center'>
                 <motion.div 
                     className="flex flex-col gap-y-3 items-center justify-center pb-12 p-5"

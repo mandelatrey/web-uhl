@@ -178,25 +178,25 @@ const Navbar = () => {
 
             {/* Main header content */}
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                <div className="mx-auto h-[75px] w-full max-w-screen px-8 pt-4">
-                    <div className={`flex items-center justify-between w-full h-full rounded-xl px-6 transition-all duration-300 ${isInverted ? 'bg-dark-green border border-dark-green/20' : 'bg-white border border-white/20'}`}>
-                        <a href="./" className="flex flex-row items-center">
+                <div className="mx-auto h-[75px] md:w-[80%] max-w-screen px-8 pt-4 mt-5">
+                    <div className={`flex items-center justify-between w-full h-full rounded-full p-3 transition-all duration-300 ${isInverted ? 'bg-fruit-green/30' : 'bg-gray-500/20 border border-white/20'} backdrop-blur-lg`}>
+                        <a href="./" className="flex flex-row items-center ">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
                                 width={130}
                                 height={50}
                                 alt="company logo"
-                                className={`transition-all duration-300 ${isInverted ? 'invert' : ''}`} />
+                                className={`transition-all duration-300 invert ml-3 ${isInverted ? 'invert-0' : ''}`} />
                         </a>
 
-                        <button onClick={handleClick} className="lg:hidden ml-auto">
-                            <Menu size={26} className={`transition-colors duration-300 ${isInverted ? 'text-white' : 'text-gray-900'}`} />
+                        <button onClick={handleClick} className="lg:hidden p-4">
+                            <Menu size={26} className={`transition-colors duration-300 ${isInverted ? 'text-gray-900' : 'text-gray-100'}`} />
                         </button>
 
                         {/* Desktop */}
                         <ul className="max-lg:hidden flex flex-row  items-center gap-10">
                             {navItems.map((item) => (
-                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center gap-1 relative py-2 ease-in ${isInverted ? 'text-white hover:text-white/70 hover:border-b hover:border-white/50' : 'text-gray-900 hover:text-gray-600 hover:border-b hover:border-gray-600'}`}>
+                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center relative ease-in ${isInverted ? 'text-gray-900 hover:text-black hover:border-b hover:border-white/50' : 'text-gray-100 hover:text-gray-200 hover:border-b hover:border-gray-200'}`}>
                                     {item.name.toLowerCase() === "projects" ? (
                                         <div
                                             className="flex items-center gap-1 group"
@@ -240,9 +240,9 @@ const Navbar = () => {
                         </ul>
 
 
-                        <button className={`h-[40px] w-[120px] rounded-lg uppercase flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 ${isInverted ? 'bg-white text-fruit-green' : 'bg-fruit-green text-white'}`}>
-                            <p className="mx-14 font-semibold text-sm">
-                                Login
+                        <button className={`h-[40px] w-[150px] rounded-full flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 ${isInverted ? 'bg-white text-gray-900' : 'bg-white text-gray-900'}`}>
+                            <p className="font-semibold text-xm">
+                                Log In
                             </p>
                         </button>
 
