@@ -259,7 +259,7 @@ const Navbar = () => {
                             </p>
                         </button>
 
-                        <div className="absolute top-0 left-0 w-full h-full backdrop-blur-md z-[-1] bg-white/30 rounded-xl"/>
+                        {/* <div className="absolute top-0 left-0 w-full h-full backdrop-blur-md z-[-1] bg-white/30 rounded-full"/> */}
 
 
                     </div>
