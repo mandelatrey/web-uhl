@@ -32,7 +32,7 @@ const footerItems = [
     {
         title: "Contact Us",
         links: [
-            { name: "+1 (555) 123-4567", href: "tel:+15551234567", icon: "phone" },
+            { name: "+256-754-570890", href: "tel:+256754570890", icon: "phone" },
             { name: "info@uhlendorf.org", href: "mailto:info@uhlendorf.org", icon: "email" },
         ]
     },

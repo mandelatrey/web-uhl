@@ -81,7 +81,7 @@ const Hero = () => {
 
                             <SplitText
                                 text="We uplift communities through innovative solutions that address   critical needs in water, income security, and health."
-                                className="font-base text-base md:text-xl text-white/90 tracking-normal pt-2 max-w-[80%] mb-6"
+                                className="font-base text-base md:text-xl text-white/90 tracking-normal max-w-[80%] mb-6"
                                 delay={200}
                                 duration={0.9}
                                 ease="power2.out"
@@ -97,7 +97,7 @@ const Hero = () => {
                             <FadeContent blur={false} duration={1500} easing="ease-in" initialOpacity={0} delay={400}>
                                 <Link 
                                     href="/about-us" 
-                                    className="flex items-center justify-center bg-fruit-green hover:bg-fruit-green/90 rounded-lg transition-all duration-300 hover:scale-105 w-[150px] md:w-[200px] h-[40px] md:h-[50px] "
+                                    className="flex items-center justify-center bg-fruit-green hover:bg-fruit-green/90 rounded-full transition-all duration-300 hover:scale-105 w-[150px] md:w-[200px] h-[40px] md:h-[50px] "
                                 >
                                     <p className="text-lg tracking-tight font-regular text-white">
                                         About Us

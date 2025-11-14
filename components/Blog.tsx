@@ -75,14 +75,14 @@ const Blog = () => {
                 <span className="text-xs font-semibold tracking-widest text-highlight-green/80 mb-2 md:mb-3 block">
                   {featuredPost.category}
                 </span>
-                <h3 className="text-xl md:text-2xl lg:text-3xl text-highlight-green font-regular tracking-tight mb-2 md:mb-3">
+                <h3 className="text-lg md:text-2xl lg:text-3xl text-highlight-green font-regular tracking-tight mb-2 md:mb-3">
                   {featuredPost.title}
                 </h3>
                 <p className="text-sm md:text-base/tight text-gray-200 mb-4 md:mb-6 lg:max-w-[80%]">
                   {featuredPost.description}
                 </p>
-                <button className="bg-fruit-green hover:bg-fruit-green/80 text-gray-100 px-4 md:px-6 py-2 rounded text-xs md:text-sm font-semibold transition-all duration-300 ease-in cursor-pointer">
-                  READ MORE
+                <button className="bg-fruit-green hover:bg-fruit-green/80 text-gray-100 px-68 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 ease-in cursor-pointer min-w-[200px]">
+                  Read  <span className="font-light">(add lucide icon)</span>
                 </button>
               </div>
             </Link>
@@ -108,7 +108,7 @@ const Blog = () => {
                   <span className="text-xs font-semibold tracking-widest text-fruit-green/60 mb-1 md:mb-2 block">
                     {post.category}
                   </span>
-                  <h4 className="text-sm md:text-base lg:text-lg/tight font-bold tracking-tight mb-1 md:mb-2 line-clamp-2">
+                  <h4 className="text-sm md:text-base lg:text-lg/tight font-semibold tracking-tight mb-1 md:mb-2 line-clamp-2">
                     {post.title}
                   </h4>
                   <p className="text-xs md:text-sm text-gray-700 line-clamp-3">

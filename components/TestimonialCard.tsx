@@ -35,7 +35,7 @@ const TestimonialCard = memo(({ user, message, photo, index }: TestimonialCardPr
       </p>
 
       {/* User Name and Role */}
-      <p className="text-gray-900 text-sm/tight md:text-base/tight line-clamp-1 font-semibold mt-auto">
+      <p className="text-gray-600 text-sm/tight md:text-base/tight line-clamp-1 mt-auto">
         {user}
       </p>
     </div>

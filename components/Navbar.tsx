@@ -203,14 +203,14 @@ const Navbar = () => {
                         {/* Desktop */}
                         <ul className="max-lg:hidden flex flex-row  items-center gap-10">
                             {navItems.map((item) => (
-                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center relative ease-in ${isInverted ? 'text-gray-900 hover:text-black hover:border-b hover:border-white/50' : 'text-gray-100 hover:text-gray-200 hover:border-b hover:border-gray-200'}`}>
+                                <li key={item.name} className={`text-sm tracking-wide  flex items-center relative ease-in  ${isInverted ? 'text-gray-900 hover:text-black hover:border-b hover:border-gray-800/50' : 'text-gray-100 hover:text-gray-200 hover:border-b hover:border-gray-200'}`}>
                                     {item.name.toLowerCase() === "projects" ? (
                                         <div
                                             className="flex items-center gap-1 group"
                                             onMouseEnter={openProjectsDropdown}
                                             onMouseLeave={scheduleCloseProjectsDropdown}
                                         >
-                                            <Link href={item.href}>
+                                            <Link href={item.href} className=" transition-all duration-300">
                                                 {item.name}
                                             </Link>
                                             <ChevronDown size={14} className="mt-[1px] group-hover:translate-y-[0.8px] transition-transform duration-200" />
@@ -218,7 +218,7 @@ const Navbar = () => {
                                             {/* Dropdown Menu */}
                                             {isProjectsDropdownOpen && (
                                                 <div
-                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50 mt-7"
+                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-2xl shadow-lg py-3 min-w-[300px] z-50 mt-7"
                                                     onMouseEnter={openProjectsDropdown}
                                                     onMouseLeave={scheduleCloseProjectsDropdown}
                                                 >
@@ -244,7 +244,7 @@ const Navbar = () => {
                                             )}
                                         </div>
                                     ) : (
-                                        <Link href={item.href}>
+                                        <Link href={item.href} className="hover:pb-1 transition-all duration-300 cursor-pointer transition-all duration-300">
                                             {item.name}
                                         </Link>
                                     )}
@@ -253,8 +253,8 @@ const Navbar = () => {
                         </ul>
 
 
-                        <button className={`h-[40px] w-[150px] rounded-full flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 ${isInverted ? 'bg-white text-gray-900' : 'bg-white text-gray-900'}`}>
-                            <p className="font-semibold text-xm">
+                        <button className={`h-[40px] w-[150px] rounded-full flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 group cursor-pointer ${isInverted ? 'bg-white text-gray-900 hover:bg-white/90 cursor-pointer' : 'bg-white text-gray-900'}`}>
+                            <p className="font-regular text-xm group-hover:text-gray-700 transition-all duration-300 ease-in-out">
                                 Log In
                             </p>
                         </button>
