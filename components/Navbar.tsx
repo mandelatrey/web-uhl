@@ -185,25 +185,25 @@ const Navbar = () => {
 
             {/* Main header content */}
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                <div className="mx-auto h-[70px] w-[78%] max-w-screen px-4 pt-4 mt-5">
-                    <div className={`relative flex items-center justify-between w-[100%] h-full rounded-full px-2 transition-all duration-300`}>
-                        <a href="./" className="flex flex-row items-center pl-2">
+                <div className="mx-auto h-[75px] md:w-[80%] max-w-screen px-8 pt-4 mt-5">
+                    <div className={`flex items-center justify-between w-full h-full rounded-full p-3 transition-all duration-300 ${isInverted ? 'bg-fruit-green/30' : 'bg-gray-600/50 border border-white/20'} backdrop-blur-sm`}>
+                        <a href="./" className="flex flex-row items-center ">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
                                 width={120}
                                 height={50}
                                 alt="company logo"
-                                className={`transition-all duration-300 invert`} />
+                                className={`transition-all duration-300 invert ml-3 ${isInverted ? 'invert-0' : ''}`} />
                         </a>
 
-                        <button onClick={handleClick} className="lg:hidden ml-auto">
-                            <Menu size={26} className={`transition-colors duration-300`} />
+                        <button onClick={handleClick} className="lg:hidden p-4">
+                            <Menu size={26} className={`transition-colors duration-300 ${isInverted ? 'text-gray-900' : 'text-gray-100'}`} />
                         </button>
 
                         {/* Desktop */}
                         <ul className="max-lg:hidden flex flex-row  items-center gap-10">
                             {navItems.map((item) => (
-                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center gap-1 relative py-2 ease-in}`}>
+                                <li key={item.name} className={`text-sm tracking-wide cursor-pointer transition-all duration-300 flex items-center relative ease-in ${isInverted ? 'text-gray-900 hover:text-black hover:border-b hover:border-white/50' : 'text-gray-100 hover:text-gray-200 hover:border-b hover:border-gray-200'}`}>
                                     {item.name.toLowerCase() === "projects" ? (
                                         <div
                                             className="flex items-center gap-1 group"
@@ -218,7 +218,7 @@ const Navbar = () => {
                                             {/* Dropdown Menu */}
                                             {isProjectsDropdownOpen && (
                                                 <div
-                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[280px] z-50"
+                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50 mt-7"
                                                     onMouseEnter={openProjectsDropdown}
                                                     onMouseLeave={scheduleCloseProjectsDropdown}
                                                 >
@@ -253,9 +253,9 @@ const Navbar = () => {
                         </ul>
 
 
-                        <button className={`h-[40px] w-[120px] rounded-lg uppercase flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 bg-fruit-green text-white`}>
-                            <p className="mx-14 font-semibold text-sm text-white">
-                                Login
+                        <button className={`h-[40px] w-[150px] rounded-full flex items-center justify-center max-lg:hidden font-medium transition-all duration-300 ${isInverted ? 'bg-white text-gray-900' : 'bg-white text-gray-900'}`}>
+                            <p className="font-semibold text-xm">
+                                Log In
                             </p>
                         </button>
 
