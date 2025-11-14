@@ -179,7 +179,7 @@ const Navbar = () => {
             {/* Main header content */}
             <div className={`transition-all duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                 <div className="mx-auto h-[75px] md:w-[80%] max-w-screen px-8 pt-4 mt-5">
-                    <div className={`flex items-center justify-between w-full h-full rounded-full p-3 transition-all duration-300 ${isInverted ? 'bg-fruit-green/30' : 'bg-gray-500/20 border border-white/20'} backdrop-blur-lg`}>
+                    <div className={`flex items-center justify-between w-full h-full rounded-full p-3 transition-all duration-300 ${isInverted ? 'bg-fruit-green/30' : 'bg-gray-600/50 border border-white/20'} backdrop-blur-sm`}>
                         <a href="./" className="flex flex-row items-center ">
                             <Image
                                 src="./icons/uhlendorf-logo.svg"
@@ -211,7 +211,7 @@ const Navbar = () => {
                                             {/* Dropdown Menu */}
                                             {isProjectsDropdownOpen && (
                                                 <div
-                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50"
+                                                    className="absolute top-full left-0 mt-5 bg-white border border-gray-200 rounded-lg shadow-lg py-3 min-w-[200px] z-50 mt-7"
                                                     onMouseEnter={openProjectsDropdown}
                                                     onMouseLeave={scheduleCloseProjectsDropdown}
                                                 >

@@ -13,7 +13,7 @@ const TestimonialCard = memo(({ user, message, photo, index }: TestimonialCardPr
     <div 
       role="article" 
       aria-label={`Testimonial from ${user}`}
-      className="bg-highlight-green rounded-2xl shadow-md p-4 px-8 py-8 flex flex-col gap-4 w-full h-[50%] min-h-[400px]"
+      className="bg-highlight-green/50 rounded-3xl shadow-md/1 p-4 md:px-5 md:px-8 md:py-8 flex flex-col gap-2 w-full h-[60%] min-h-[300px] md:min-h-[350px] overflow-hidden"
     >
       {/* User Photo - Circular, 60px diameter */}
       <div className="flex justify-start">
@@ -23,19 +23,19 @@ const TestimonialCard = memo(({ user, message, photo, index }: TestimonialCardPr
             alt={user}
             fill
             className="object-cover"
-            sizes="60px"
+            sizes="50px"
             loading="lazy"
           />
         </div>
       </div>
 
       {/* Testimonial Message with line clamping */}
-      <p className="text-gray-800 text-sm md:text-base font-normal leading-relaxed flex-grow pt-6">
+      <p className="text-gray-800 text-sm md:text-base font-normal leading-normal flex-grow pt-3">
         {message}
       </p>
 
       {/* User Name and Role */}
-      <p className="text-gray-700 text-sm/tight md:text-base/tight line-clamp-1 font-semibold mt-auto">
+      <p className="text-gray-900 text-sm/tight md:text-base/tight line-clamp-1 font-semibold mt-auto">
         {user}
       </p>
     </div>

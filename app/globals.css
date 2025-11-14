@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --color-highlight-green: #CAE2BC;
-  --color-fruit-green: #157F1F;
-  --color-dark-green: #157F1F;
-  --color-bright-green: #DBF9B8;
-  --color-light-green: #F0FFDF;
-  --color-dark-brown: #565F54;
+  --color-highlight-green: #ffe7da;
+  --color-fruit-green: #f77f00;
+  --color-dark-green: #7c6a0a;
+  --color-creame: rgba(255, 246, 227, 1);
+  --color-bright-green: #babd8d;
+  --color-light-green: #FFEBE6;
   --color-black: #000000;
   --color-cream: #E6F0E1;
+  --color-dark-brown: rgba(37, 30, 28, 1);
 
 }
 
@@ -16,6 +17,7 @@
   --color-highlight-green: var(--color-highlight-green);
   --color-fruit-green: var(--color-fruit-green);
   --color-dark-green: var(--color-dark-green);
+  --color-light-green: var(--color-light-green);
   --color-bright-green: var(--color-bright-green);
   --color-dark-brown: var(--color-dark-brown);
   --font-sans: var(--font-DMSans);
@@ -24,7 +26,6 @@
 
 
 body {
-  background: var(--color-cream);
   overflow-x: hidden
 }
 
@@ -55,7 +56,7 @@ section {
 
 @layer base {
   body {
-    @apply bg-highlight-green text-gray-800
+    @apply text-gray-800
   }
 }
 
@@ -97,7 +98,7 @@ section {
 }
 
 .section-title {
-  @apply text-center text-4xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-3 tracking-tighter
+  @apply text-center text-4xl md:text-5xl lg:text-5xl font-semibold text-dark-brown mb-2 tracking-tighter
 }
 
 .section-scroll-title {

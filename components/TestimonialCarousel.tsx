@@ -123,7 +123,7 @@ const TestimonialCarousel = ({ testimonials, className = '' }: TestimonialCarous
         {testimonials.map((testimonial, index) => (
           <div
             key={`${testimonial.user}-${index}`}
-            className="flex-shrink-0 w-[270px] md:w-[280px] lg:w-[300px]"
+            className="flex-shrink-0 w-[200px] md:w-[280px] lg:w-[300px]"
             style={{
               scrollSnapAlign: 'start',
             }}

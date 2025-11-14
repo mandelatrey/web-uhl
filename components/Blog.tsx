@@ -46,10 +46,10 @@ const Blog = () => {
   const regularPosts = blogPosts.filter(post => !post.featured);
 
   return (
-    <section className="w-full h-full py-16 px-4 mb-15">
-      <div className="container w-[90%] mx-auto flex flex-col items-center gap-y-12">
+    <section className="w-full h-full py-15 px-2 mb-5">
+      <div className="container w-full p-3 mx-auto flex flex-col items-center gap-y-7">
         {/* Header */}
-        <div className="flex flex-col gap-y-3">
+        <div className="flex flex-col gap-y-1">
           <h1 className='section-title'>Blog</h1>
           <p className="text-center text-md/tight lg:text-lg font-light max-w-sm lg:max-w-lg">
             Read about some of our work here
@@ -57,7 +57,7 @@ const Blog = () => {
         </div>
 
         {/* Grid Layout */}
-        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="w-full h-[70%] max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-3 px-6">
           {/* Featured Post - Left Side */}
           {featuredPost && (
             <Link 
@@ -89,12 +89,12 @@ const Blog = () => {
           )}
 
           {/* Regular Posts - Right Side Grid */}
-          <div className="grid grid-cols-1 gap-4 md:gap-6 lg:h-[600px] content-between justify-items-center">
+          <div className="grid grid-cols-1 gap-2 md:gap-2 lg:h-[600px] content-between justify-items-center">
             {regularPosts.map((post) => (
               <Link
                 key={post.id}
                 href={post.slug.startsWith('/') ? post.slug : `/blog/${post.slug}`}
-                className="flex flex-col items-center justify-center sm:flex-row gap-3 md:gap-4 bg-highlight-green hover:bg-highlight-green/60 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-md transition-all duration-300 ease-in cursor-pointer group h-full w-full"
+                className="flex flex-col items-center justify-center sm:flex-row gap-2 md:gap-1 bg-highlight-green hover:bg-highlight-green/60 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-md transition-all duration-300 ease-in cursor-pointer group h-full w-full"
               >
                 <div className="w-full sm:w-32 md:w-40 lg:w-44 h-40 sm:h-full flex-shrink-0">
                   <img 
